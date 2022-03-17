@@ -1,0 +1,65 @@
+{% extends "base.html"%}
+
+    {% block content %}
+
+<div class="container">
+    <div class="row text-center">
+        <div class="col-md-12">
+
+    <div class="global-container">
+        <div class="card login-form">
+        <div class="card-body">
+            <img src="https://i2.wp.com/www.codincity.com/wp-content/uploads/2021/07/codincity-logo.png?resize=300%2C68&ssl=1" class="brand_logo" alt="Codincity Logo">
+            <div class="card-text">
+                {% if messages %}
+                
+                        {% for message in messages %}
+                        <div class="alert alert-info">
+                            {{ message }}
+                        </div>
+                        {% endfor %}
+                  
+                    {% endif %}
+                <!--
+                    
+                <div class="alert alert-danger alert-dismissible fade show" role="alert">Incorrect username or password.</div> -->
+                <h4 class="mt-3 font-weight-bold">Register</h4>
+                <form method="post">
+                    {%  csrf_token %}
+                    
+                    <div class="input-group mb-3">
+                        <div class="input-group-append">
+                            <span class="input-group-text"><i class="fas fa-user"></i></span>
+                        </div>
+                        <input type="text" name="username" class="form-control input_user" value="" placeholder="Username" required>
+                    </div>
+
+                    <div class="input-group mb-3">
+                        <div class="input-group-append">
+                            <span class="input-group-text"><i class="fas fa-envelope"></i></span>
+                        </div>
+                        <input type="email" name="email" class="form-control input_user" value="" placeholder="Email" required>
+                    </div>
+                    <div class="input-group mb-2">
+                        <div class="input-group-append">
+                            <span class="input-group-text"><i class="fas fa-key"></i></span>
+                        </div>
+                        <input type="password" name="password" class="form-control input_pass" value="" placeholder="Password" required>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary btn-block mt-2">REGISTER</button>
+                    
+                    <div class="sign-up mt-2">
+                        Already have an account? <a href="{% url 'login_attempt'%}">Login</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    </div>
+    
+        </div>
+    </div>
+</div>
+
+    {% endblock %}
