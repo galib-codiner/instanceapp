@@ -129,12 +129,19 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
 
 #SES SMTP
 
-EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+# EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_BACKEND = 'django_ses.SESBackend'
+AWS_ACCESS_KEY_ID = 'AKIAXE6NLMXXNOQQWPV7'
+AWS_SECRET_ACCESS_KEY = 'BFpUOa//9xtZguQYrw5jb/hxDl1HZmXC0KZPBtfYG2rd'
 EMAIL_HOST = 'email-smtp.us-west-2.amazonaws.com'
-EMAIL_PORT = '587' 
+EMAIL_PORT = 587 
 EMAIL_HOST_USER = 'AKIAXE6NLMXXNOQQWPV7'
 EMAIL_PASSWORD = 'BFpUOa//9xtZguQYrw5jb/hxDl1HZmXC0KZPBtfYG2rd'
 EMAIL_USE_TLS = True
+
+
+AWS_ACCESS_KEY_ID = 'your_username'
+AWS_SECRET_ACCESS_KEY = 'your_password'
 
 #S3 BUCKETS CONFIG
 AWS_ACCESS_KEY_ID = 'AKIAXE6NLMXXBQO74UGX'
@@ -144,3 +151,36 @@ AWS_S3_FILE_OVERWRITE = False
 AWS_DEFAULT_ACL = None
 DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
 STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+
+
+
+
+# [Unit]
+# Description=gunicorn daemon
+# Requires=gunicorn.socket
+# After=network.target
+
+# [Service]
+# User=ubuntu
+# Group=www-data
+# WorkingDirectory=/home/ubuntu/project/instanceapp
+# ExecStart=/home/ubuntu/project/myprojectenv/bin/gunicorn \
+#           --access-logfile - \
+#           --workers 3 \
+#           --bind unix:/run/gunicorn.sock \
+#           src.wsgi:application
+
+# [Install]
+# WantedBy=multi-user.target
+
+# server {
+#     listen 80;
+#     server_name 54.78.143.11;
+
+#     location = /favicon.ico { access_log off; log_not_found off; }
+    
+#     location / {
+#         include proxy_params;
+#         proxy_pass http://unix:/run/gunicorn.sock;
+#     }
+# }
