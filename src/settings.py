@@ -144,10 +144,8 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
 EMAIL_BACKEND = 'django_ses.SESBackend'
 AWS_ACCESS_KEY_ID = 'AKIAXE6NLMXXNOQQWPV7'
 AWS_SECRET_ACCESS_KEY = 'BFpUOa//9xtZguQYrw5jb/hxDl1HZmXC0KZPBtfYG2rd'
-EMAIL_PORT = 587 
 AWS_SES_REGION_NAME = 'us-west-2' #(ex: us-east-2)
 AWS_SES_REGION_ENDPOINT ='email-smtp.us-west-2.amazonaws.com' #(ex: email.us-east-2.amazonaws.com)
-EMAIL_USE_TLS = True
 
 #S3 BUCKETS CONFIG
 AWS_ACCESS_KEY_ID = 'AKIAXE6NLMXXBQO74UGX'
