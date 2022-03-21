@@ -141,11 +141,18 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
 
 # new smtp
 # EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
-EMAIL_BACKEND = 'django_ses.SESBackend'
-AWS_ACCESS_KEY_ID = 'AKIAXE6NLMXXNOQQWPV7'
-AWS_SECRET_ACCESS_KEY = 'BFpUOa//9xtZguQYrw5jb/hxDl1HZmXC0KZPBtfYG2rd'
-AWS_SES_REGION_NAME = 'us-west-2' #(ex: us-east-2)
-AWS_SES_REGION_ENDPOINT ='email-smtp.us-west-2.amazonaws.com' #(ex: email.us-east-2.amazonaws.com)
+# EMAIL_BACKEND = 'django_ses.SESBackend'
+# AWS_ACCESS_KEY_ID = 'AKIAXE6NLMXXNOQQWPV7'
+# AWS_SECRET_ACCESS_KEY = 'BFpUOa//9xtZguQYrw5jb/hxDl1HZmXC0KZPBtfYG2rd'
+# AWS_SES_REGION_NAME = 'us-west-2' #(ex: us-east-2)
+# AWS_SES_REGION_ENDPOINT ='email-smtp.us-west-2.amazonaws.com' #(ex: email.us-east-2.amazonaws.com)
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_USE_TLS = True
+EMAIL_PORT = 587
+EMAIL_HOST_USER = 'galibcodincity@gmail.com'
+EMAIL_HOST_PASSWORD = 'Cry@#Code81624'
 
 #S3 BUCKETS CONFIG
 AWS_ACCESS_KEY_ID = 'AKIAXE6NLMXXBQO74UGX'
