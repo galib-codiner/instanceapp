@@ -232,3 +232,5 @@ STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
 # Authorization
 # Transsaction Flow-  onus/offus == issue / aquire 
 # Settlement
+
+# /home/ubuntu/.local/bin/gunicorn
