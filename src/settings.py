@@ -227,3 +227,8 @@ STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
 
 # [Install]
 # WantedBy=multi-user.target
+
+
+# Authorization
+# Transsaction Flow-  onus/offus == issue / aquire 
+# Settlement
