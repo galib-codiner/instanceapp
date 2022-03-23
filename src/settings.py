@@ -77,23 +77,23 @@ WSGI_APPLICATION = 'src.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': BASE_DIR / 'db.sqlite3',
-#     }
-# }
-
 DATABASES = {
-'default': {
-'ENGINE': 'django.db.backends.mysql',
-'NAME': 'instance_sizing_pricing_demo',
-'HOST': 'database.ctedujo1muxe.eu-west-1.rds.amazonaws.com',
-'USER': 'admin',
-'PASSWORD': 'Admin123',
-'PORT': '3306'
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
+
+# DATABASES = {
+# 'default': {
+# 'ENGINE': 'django.db.backends.mysql',
+# 'NAME': 'instance_sizing_pricing_demo',
+# 'HOST': 'database.ctedujo1muxe.eu-west-1.rds.amazonaws.com',
+# 'USER': 'admin',
+# 'PASSWORD': 'Admin123',
+# 'PORT': '3306'
+#     }
+# }
 
 
 # Password validation
@@ -206,3 +206,23 @@ STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
 #         proxy_pass http://unix:/run/gunicorn.sock;
 #     }
 # }
+
+
+
+# [Unit]
+# Description=gunicorn daemon
+# Requires=gunicorn.socket
+# After=network.target
+
+# [Service]
+# User=ubuntu
+# Group=www-data
+# WorkingDirectory=/home/ubuntu/project/instanceapp
+# ExecStart=/home/ubuntu/.local/bin/gunicorn \
+#           --access-logfile - \
+#           --workers 3 \
+#           --bind unix:/run/gunicorn.sock \
+#           src.wsgi:application
+
+# [Install]
+# WantedBy=multi-user.target
