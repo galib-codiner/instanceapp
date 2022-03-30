@@ -138,7 +138,6 @@ STATIC_URL = '/static/'
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
 
-
 #SES SMTP
 
 # # EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
@@ -146,7 +145,7 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
 # AWS_ACCESS_KEY_ID = 'AKIAXE6NLMXXNOQQWPV7'
 # AWS_SECRET_ACCESS_KEY = 'BFpUOa//9xtZguQYrw5jb/hxDl1HZmXC0KZPBtfYG2rd'
 # EMAIL_HOST = 'email-smtp.us-west-2.amazonaws.com'
-# EMAIL_PORT = 587 
+# EMAIL_PORT = 587
 # # EMAIL_HOST_USER = 'AKIAXE6NLMXXNOQQWPV7'
 # # EMAIL_PASSWORD = 'BFpUOa//9xtZguQYrw5jb/hxDl1HZmXC0KZPBtfYG2rd'
 # EMAIL_USE_TLS = True
@@ -174,6 +173,7 @@ AWS_S3_FILE_OVERWRITE = False
 AWS_DEFAULT_ACL = None
 DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
 STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+
 
 
 
