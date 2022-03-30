@@ -77,23 +77,23 @@ WSGI_APPLICATION = 'src.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
-}
-
 # DATABASES = {
-# 'default': {
-# 'ENGINE': 'django.db.backends.mysql',
-# 'NAME': 'instance_sizing_pricing_demo',
-# 'HOST': 'database.ctedujo1muxe.eu-west-1.rds.amazonaws.com',
-# 'USER': 'admin',
-# 'PASSWORD': 'Admin123',
-# 'PORT': '3306'
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3',
 #     }
 # }
+
+DATABASES = {
+'default': {
+'ENGINE': 'django.db.backends.mysql',
+'NAME': 'instance_sizing_pricing_demo',
+'HOST': 'database.ctedujo1muxe.eu-west-1.rds.amazonaws.com',
+'USER': 'admin',
+'PASSWORD': 'Admin123',
+'PORT': '3306'
+    }
+}
 
 # /home/ubuntu/project/myprojectenv/bin/gunicorn /home/ubuntu/.local/bin/gunicorn
 
