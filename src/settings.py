@@ -12,10 +12,12 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 
 import os
 from pathlib import Path
+import pymysql
+
+pymysql.install_as_MySQLdb()
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
-
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
@@ -27,7 +29,6 @@ SECRET_KEY = '2_+0cn0tm8)h+fwrk#prvw@#vvqb!no)@%d=fto8i-4_&h+^5g'
 DEBUG = False
 
 ALLOWED_HOSTS = ['*']
-
 
 # Application definition
 
@@ -73,7 +74,6 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'src.wsgi.application'
 
-
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
 
@@ -84,8 +84,8 @@ WSGI_APPLICATION = 'src.wsgi.application'
 #     }
 # }
 
-DATABASES = {
-'default': {
+DATABASES =     {
+'default':  {
 'ENGINE': 'django.db.backends.mysql',
 'NAME': 'instance_sizing_pricing_demo',
 'HOST': 'database.ctedujo1muxe.eu-west-1.rds.amazonaws.com',
@@ -94,6 +94,7 @@ DATABASES = {
 'PORT': '3306'
     }
 }
+
 
 # /home/ubuntu/project/myprojectenv/bin/gunicorn /home/ubuntu/.local/bin/gunicorn
 
@@ -115,7 +116,6 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-
 # Internationalization
 # https://docs.djangoproject.com/en/3.1/topics/i18n/
 
@@ -128,7 +128,6 @@ USE_I18N = True
 USE_L10N = True
 
 USE_TZ = True
-
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
@@ -174,10 +173,6 @@ AWS_DEFAULT_ACL = None
 DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
 STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
 
-
-
-
-
 # [Unit]
 # Description=gunicorn daemon
 # Requires=gunicorn.socket
@@ -208,8 +203,6 @@ STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
 #     }
 # }
 
-
-
 # [Unit]
 # Description=gunicorn daemon
 # Requires=gunicorn.socket
@@ -227,7 +220,6 @@ STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
 
 # [Install]
 # WantedBy=multi-user.target
-
 
 # Authorization
 # Transsaction Flow-  onus/offus == issue / aquire 
